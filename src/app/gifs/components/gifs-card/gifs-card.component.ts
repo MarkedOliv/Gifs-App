@@ -13,4 +13,8 @@ export class GifCardComponent implements OnInit {
   ngOnInit(): void {
     if ( !this.gif ) throw new Error("GIF property is required")
   }
+
+  openExternal(link: string) {
+    window.open(link, '_blank')
+  }
 }

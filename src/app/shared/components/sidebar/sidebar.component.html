@@ -1,4 +1,4 @@
-<div class="bg-dark border-right p-3" id="sidebar">
+<div class="bg-dark border-right p-3" [ngClass]="{'sidevh': noTagsLoaded, 'full-height': !noTagsLoaded}">
   <h3 class="text-light">GifsApp</h3>
   <hr class="text-white" />
 
@@ -9,6 +9,7 @@
       (click)="research(item)"
     >
       {{ item | titlecase }}
+      <button class="border-0 bg-transparent"  (click)="delete(item)">🗑</button>
     </button>
   </div>
 </div>

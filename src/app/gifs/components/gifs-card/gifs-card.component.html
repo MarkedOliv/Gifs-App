@@ -1,6 +1,6 @@
-<div class="card mb-2 text-center bg-dark">
+<div class="card mb-2 text-center bg-dark pointer" style="cursor: pointer;" (click)="openExternal(gif.bitly_gif_url)">
   <shared-lazy-image
-    class="text-white"
+    class="text-white img-fluid"
     [alt]="gif.title || 'No title'"
     [url]="gif.images.downsized_medium.url"
   />

@@ -59,4 +59,11 @@ export class GifsService {
         this.gifList = resp.data;
       });
   }
+
+  deleteTag(tag: string): void {
+    if (tag.length === 0) return;
+
+    this._tagsHistory = this._tagsHistory.filter((t) => t !== tag);
+    this.setLocalStorage();
+  }
 }

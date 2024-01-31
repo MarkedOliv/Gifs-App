@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 
 @Component({
@@ -13,7 +13,15 @@ export class SideBarComponent {
     return this.gifsService.tagsHistory;
   }
 
+  get noTagsLoaded(): boolean {
+    return this.gifsService.tagsHistory.length === 0;
+  }
+
   research(item: string) {
     this.gifsService.searchTag(item)
+  }
+
+  delete(item: string) {
+    this.gifsService.deleteTag(item)
   }
 }
